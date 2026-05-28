@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatic Artificial Intelligence Laboratory (SAIL) | Georgia Southern University</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script src="components/load-nav-footer.js" type="module" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
+
+    <div class="w-screen min-h-screen">
+        <div id="nav-insert"></div>
+        <section id="publications" class="pt-10 pb-20 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Publications</h2>
+                    <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
+                </div>
+                <div class="space-y-8">
+
+                    <!-- Published -->
+                    <div class="bg-white rounded-xl shadow border-l-4 border-green-600 flex flex-col">
+                        <div class="p-8 pb-4 border-b shrink-0">
+                            <h3 class="text-xl font-bold text-gray-900">Published</h3>
+                        </div>
+                        <div class="overflow-y-auto max-h-[500px] p-8 pt-4" id="published-cont">
+                            <!-- JavaScript inserts here -->
+                        </div>
+                    </div>
+
+                    <!-- Conferences -->
+                    <div class="bg-white rounded-xl shadow border-l-4 border-purple-600 flex flex-col">
+                        <div class="p-8 pb-4 border-b shrink-0">
+                            <h3 class="text-xl font-bold text-gray-900">Conferences</h3>
+                        </div>
+                        <div class="overflow-y-auto max-h-[500px] p-8 pt-4">
+                            <ul class="space-y-4" id="conferences-cont">
+                                <!-- JavaScript inserts here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Accepted & In Production -->
+                    <div class="bg-white rounded-xl shadow border-l-4 border-blue-600 flex flex-col">
+                        <div class="p-8 pb-4 border-b shrink-0">
+                            <h3 class="text-xl font-bold text-gray-900">Accepted & In Production</h3>
+                        </div>
+                        <div class="overflow-y-auto max-h-[500px] p-8 pt-4">
+                            <ul class="space-y-6" id="accepted-cont">
+                                <!-- JavaScript inserts here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Submitted (Under Review) -->
+                    <div class="bg-white rounded-xl shadow border-l-4 border-orange-500 flex flex-col">
+                        <div class="p-8 pb-4 border-b shrink-0">
+                            <h3 class="text-xl font-bold text-gray-900">Submitted (Under Review)</h3>
+                        </div>
+                        <div class="overflow-y-auto max-h-[500px] p-8 pt-4">
+                            <ul class="space-y-4" id="submitted-cont">
+                                <!-- JavaScript inserts here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- A* Conference Under Review -->
+                    <div class="bg-white rounded-xl shadow border-l-4 border-red-500 flex flex-col">
+                        <div class="p-8 pb-4 border-b shrink-0">
+                            <h3 class="text-xl font-bold text-gray-900">A* Conference (Under Review)</h3>
+                        </div>
+                        <div class="overflow-y-auto max-h-[500px] p-8 pt-4">
+                            <ul class="space-y-4" id="astar-cont">
+                                <!-- JavaScript inserts here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Book -->
+                    <div class="bg-gsuNavy text-white rounded-xl shadow border-l-4 border-gsuGold flex flex-col">
+                        <div class="overflow-y-auto max-h-[500px] p-8">
+                            <h3 class="text-xl font-bold mb-2 flex items-center">
+                                <i class="fa-solid fa-book-open mr-3 text-gsuGold"></i> Upcoming Book Release
+                            </h3>
+                            <h4 class="text-lg font-semibold text-gsuGold">"Explainable AI in Healthcare: From Black Box to Bedside"</h4>
+                            <p class="text-sm text-gray-300 mt-2">Authored book in production with <span class="font-semibold">River Publishers</span>. Final manuscripts completed March 2026.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-insert"></div>
+
+    <script>
+        const articles = [
+
+            // PUBLISHED
+            {
+                type: "published",
+                title: "A comprehensive survey of brain–computer interface technology in healthcare: Research perspectives.",
+                journal: "Journal of Medical Signals & Sensors, 15(6), 16",
+                date: "2025",
+                badge: "Q3 · Scopus Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Investigating the impact of mindful breathing meditation on brain waves: A study on young adults.",
+                journal: "Neuropsychological Trends, 35",
+                date: "2024",
+                badge: "Scopus Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "In situ process monitoring of multi-layer deposition in wire arc additive manufacturing (WAAM) process with acoustic data analysis and machine learning.",
+                journal: "The International Journal of Advanced Manufacturing Technology, 132, 5087–5101",
+                date: "2024",
+                badge: "Q1 · IF ≈ 3.4 · SCI Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Segmentation of thoracic organs through distributed extraction of visual feature patterns.",
+                journal: "Current Gene Therapy, 24(3), 217–238",
+                date: "2024",
+                badge: "Q3 · SCI Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "A systematic analysis on Raspberry Pi prototyping: Uses, challenges, benefits, and drawbacks.",
+                journal: "IEEE Internet of Things Journal, 10(16)",
+                date: "2024",
+                badge: "Q1 · IF: 8.2 · SCI Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Quantitative analysis of planarian pigmentation.",
+                journal: "Methods in Molecular Biology, 2680, 253–261",
+                date: "2023",
+                badge: "Book Chapter · Springer Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Brain-Computer Interface-Assisted Automated Wheelchair Control Management – Cerebro: A BCI Application.",
+                journal: "Brain-Computer Interface: Using Deep Learning Applications, Wiley, Chapter 9",
+                date: "2023",
+                badge: "Book Chapter · Wiley",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Cleo: Smart glasses to monitor consumption of alcohol and cigarettes.",
+                journal: "SN Computer Science, 4, Article 53",
+                date: "2022",
+                badge: "Q2 · Scopus Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Efficient Word-Net: An open-source hotword detection engine based on few-shot learning.",
+                journal: "Journal of Information and Knowledge Management",
+                date: "2022",
+                badge: "Q2 · Scopus Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "A potable water location tagging system for victims of natural calamities.",
+                journal: "Environmental Challenges, 9, 100617",
+                date: "2022",
+                badge: "Q2 · Scopus Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "A study of glaucoma diagnosis using brain–computer interface technology.",
+                journal: "Computational Intelligence in Machine Learning (Lecture Notes in Electrical Engineering, Vol. 834, p. 271). Springer",
+                date: "2022",
+                badge: "Book Chapter · Scopus Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Multi-keyword searchable attribute-based encryption for efficient retrieval of health records in cloud.",
+                journal: "Multimedia Tools and Applications, 81, 22065–22085",
+                date: "2021",
+                badge: "Q1 · IF ≈ 3.6 · SCI Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "MaLang: A decentralized deep learning approach for detecting abusive textual content.",
+                journal: "Applied Sciences, 11(18), 8701",
+                date: "2021",
+                badge: "Q2 · IF ≈ 2.7 · SCI Indexed",
+                highlights: null
+            },
+            {
+                type: "published",
+                title: "Comprehensive analysis of embeddings and pre-training in NLP.",
+                journal: "Computer Science Review, 42, 100433",
+                date: "2021",
+                badge: "Q1 · IF ≈ 12.0 · SCI Indexed",
+                highlights: null
+            },
+
+            // CONFERENCES
+            {
+                type: "conference",
+                title: "EEG-FusionNet: An Ensemble Model Combining EEGNet and CNN-BiLSTM for EEG-Based Emotion Recognition.",
+                journal: "7th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2026), pp. 254–260",
+                date: "April 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A Neuro-Symbolic AI Framework for Adaptive and Explainable API Security Testing.",
+                journal: "7th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2026), pp. 403–408",
+                date: "April 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Generative and Explainable AI in Healthcare: Models, Applications, Challenges, and Future Directions.",
+                journal: "7th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2026), pp. 454–460",
+                date: "April 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Revisiting Cervical Cancer Risk Prediction: A Systematic Review and Leakage-Aware Benchmarking Study.",
+                journal: "7th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2026), pp. 470–476",
+                date: "April 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Comparative EEG Biomarker Analysis for Differentiating ADHD and Early Alzheimer's.",
+                journal: "7th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2026), pp. 482–488",
+                date: "April 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "AI-Driven Spatiotemporal Modelling and Forecasting of Urban PM2.5 Pollution: A Case Study.",
+                journal: "7th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2026), pp. 493–498",
+                date: "April 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A real-time air pollution control framework using novel machine learning techniques for sustainable environmental management.",
+                journal: "9th International Conference on Intelligent Computing and Control Systems (ICICCS 2026)",
+                date: "March 2026",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A unified framework for chest CT image classification: Benchmarking pre-trained architectures with lightweight and deep models.",
+                journal: "6th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2025), pp. 312–317",
+                date: "May 2025",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Quantum image classification for sustainable medical image diagnosis.",
+                journal: "6th International Conference on Inventive Research in Computing Applications (ICIRCA 2025), pp. 1789–1792",
+                date: "June 2025",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Advancements and challenges in emotional analysis using machine learning: A comprehensive review of facial expression recognition models.",
+                journal: "6th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2025), pp. 379–384",
+                date: "May 2025",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Exploring EEG as a tool for advancing consciousness studies: Principles, methodologies, and innovations.",
+                journal: "6th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2025), pp. 434–440",
+                date: "May 2025",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Wildfire detection using Vision Transformer (ViT).",
+                journal: "6th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2025), pp. 402–406",
+                date: "May 2025",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "One model fits all? Rethinking medical AI chatbots with specialized retrieval.",
+                journal: "6th International Conference on Artificial Intelligence, Robotics and Control (AIRC 2025), pp. 34–38",
+                date: "May 2025",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A comparative technique with credit card-based fraud detection using machine learning and quantum algorithm.",
+                journal: "2nd International Conference on Self Sustainable Artificial Intelligence Systems (ICSSAS 2024)",
+                date: "October 2024",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "NLP-based AI-driven resume screening solution for efficient candidate selection.",
+                journal: "9th International Congress on Information and Communication Technology (ICICT 2024), Vol. 2, London",
+                date: "October 2024",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A comparison of advanced learning models for the P300 brain–computer interfaces.",
+                journal: "AIP Conference Proceedings, Vol. 3075, Article 020064",
+                date: "July 2024",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Cloud-based human emotion classification model from EEG signals.",
+                journal: "IEEE 14th Annual Ubiquitous Computing, Electronics & Mobile Communication Conference (UEMCON 2023), New York, NY, USA",
+                date: "November 2023",
+                award: "Best Paper Award"
+            },
+            {
+                type: "conference",
+                title: "Objective emotion quantification in the metaverse using brain–computer interfaces.",
+                journal: "IFIP International Internet of Things Conference, pp. 353–361, Texas, USA",
+                date: "October 2023",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "MetaHap: A low-cost haptic glove for metaverse.",
+                journal: "IFIP International Internet of Things Conference, pp. 362–372, Texas, USA",
+                date: "October 2023",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Integration of EEG and eye tracking technology: A systematic review.",
+                journal: "IEEE SoutheastCon 2023, pp. 209–216, Florida, USA",
+                date: "May 2023",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A smart and secure IoT devices using machine learning algorithm.",
+                journal: "IEEE 2nd Mysore Sub Section International Conference (MysuruCon 2022)",
+                date: "October 2022",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "A study of glaucoma diagnosis using brain–computer interface technology.",
+                journal: "International Conference on Computational Intelligence in Machine Learning, Lecture Notes in Electrical Engineering, Vol. 834, pp. 271–279",
+                date: "March 2022",
+                award: null
+            },
+            {
+                type: "conference",
+                title: "Enhanced ransomware detection techniques using machine learning algorithms.",
+                journal: "4th International Conference on Computing and Communications Technologies (ICCCT 2021), pp. 52–58",
+                date: "December 2021",
+                award: null
+            },
+
+            // ACCEPTED & IN-PRODUCTION
+            {
+                type: "accepted",
+                title: "PestXNet: An Explainable Multi-Task Framework with GBDT and Incremental Learning for Agricultural Pest Classification and Severity Scoring",
+                journal: "Springer ICMETE-2025",
+                badge: null,
+                description: "Achieves 99.40% accuracy using ResNet-50. Assesses infestation severity directly from Grad-CAM activation maps with SHAP-based feature attribution.",
+            },
+            {
+                type: "accepted",
+                title: "Real-Time Ambulance Priority in Traffic: A YOLO-based Deep Learning Model for Emergency Vehicle Segmentation and Traffic Analysis",
+                journal: "Springer ICMETE-2025",
+                badge: null,
+                description: "Achieved 95% accuracy for emergency vehicle segmentation to prioritize routing and improve patient outcomes.",
+            },
+            {
+                type: "accepted",
+                title: "EEG-Based Analysis of Neurophysiological Correlation in Cognitive Enhancement: Investigating the Effects of Meditation and Task Familiarity",
+                journal: "Conference on Advances in Communication Networks & Systems 2025",
+                badge: null,
+                description: "Multimodal EEG study examining the neurophysiological effects of meditation and task familiarity on cognitive performance.",
+            },
+            {
+                type: "accepted",
+                title: "CTFN: A Hybrid CNN-Transformer Fusion Network with Explainability and Uncertainty Estimation",
+                journal: "Journal of Soft Computing and Data Mining (JSCDM)",
+                badge: null,
+                description: "Peak test accuracy of 99.11% on LC25000 dataset, integrating Grad-CAM, occlusion sensitivity, and uncertainty estimation.",
+            },
+
+            // SUBMITTED (UNDER REVIEW)
+            {
+                type: "submitted",
+                title: "An Explainable Dual-Stage Machine Learning and Survival Analysis Framework for Cirrhosis Prognostication and Clinical Decision Support",
+                journal: "Informatics and Health",
+                badge: "Q1"
+            },
+            {
+                type: "submitted",
+                title: "Multimodal Emotion Recognition Using EEG and Facial Expressions: A Pipeline-Centric Review of Data Acquisition, Preprocessing, Synchronization, and Fusion Strategies",
+                journal: "International Journal of Computing and Digital Systems",
+                badge: "Q2"
+            },
+            {
+                type: "submitted",
+                title: "Machine Translation in Healthcare: A Risk-Oriented Framework for Ethical, Safe, and Reliable Clinical Communication",
+                journal: "Health and Technology",
+                badge: "Q2"
+            },
+            {
+                type: "submitted",
+                title: "Integrating Biomarkers and AI-Driven Survival Models for Cancer Prognosis: A Comprehensive Review of Clinical and Computational Approaches",
+                journal: "Frontiers in Oncology",
+                badge: "Q1"
+            },
+            {
+                type: "submitted",
+                title: "Neurophysiological EEG Signatures in ASD and ADHD: A Comparative Review of Clinical Markers and Intervention Outcomes",
+                journal: "Venue (TBD)",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "Acoustic Levitation for Environmental Remediation: An Effective Approach for Containment and Forecasting of Oil Spills",
+                journal: "Advanced Sustainable Systems",
+                badge: "Q1"
+            },
+            {
+                type: "submitted",
+                title: "Vulnerabilities and Attacks in Zero Touch Provisioning: A Comprehensive Review",
+                journal: "SN Computer Science",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "Quantum Tuned Hybrid CNN-SVM for New-born Chick Gender Classification and Detection",
+                journal: "ICDSBS-2026",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "CAHICHA: Computer Automated Hardware Interaction test to tell Computer and Humans Apart",
+                journal: "Nature Machine Intelligence",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "VAKEEL: Indian Legal Domain Large Language Model",
+                journal: "International Journal of Law, Crime and Justice",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "DeepPairNet: An Unsupervised Patch Recognition Based Face Antispoof Detection Algorithm",
+                journal: "Journal of Computer Virology and Hacking Techniques",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "Detection of Insider Threats in SCADA Networks: A Two-Level Hybrid Intrusion Detection System using an Ensemble of ML Models",
+                journal: "SN Computer Science",
+                badge: null
+            },
+            {
+                type: "submitted",
+                title: "MetaSecure: A Passwordless Authentication for the Metaverse",
+                journal: "SN Computer Science",
+                badge: null
+            },
+
+            // A* CONFERENCE UNDER REVIEW
+            {
+                type: "astar",
+                title: "Offline Accident-Onset Timestamp Estimation on MIVIA-AID with VideoMAE and Dilated Temporal Convolutions",
+                journal: "IEEE International Conference on Advanced Video and Signal-Based Surveillance (AVSS)",
+                badge: "A* Conference"
+            },
+            {
+                type: "astar",
+                title: "Strict Single-Frame Video Anomaly Localization: A Provenance-Gated Study of Candidate Repair and Dense Temporal Detection",
+                journal: "IEEE International Conference on Advanced Video and Signal-Based Surveillance (AVSS)",
+                badge: "A* Conference"
+            },
+            {
+                type: "astar",
+                title: "Signal-Conditioned Memory Compression for Multi-Turn Conversations",
+                journal: "Special Interest Group on Discourse and Dialog (SIGDIAL)",
+                badge: "A* Conference"
+            },
+        ];
+
+        const publishedCont = document.querySelector("#published-cont");
+        const conferencesCont = document.querySelector("#conferences-cont");
+        const acceptedCont = document.querySelector("#accepted-cont");
+        const submittedCont = document.querySelector("#submitted-cont");
+        const astarCont = document.querySelector("#astar-cont");
+
+        for (const article of articles) {
+            switch (article.type) {
+                case "published":
+                    publishedCont.innerHTML += `
+<div class="mb-6 pb-6 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+    <h4 class="font-bold text-gsuNavy">${article.title}</h4>
+    <p class="text-sm text-gray-600 italic mb-2">${article.journal} | ${article.date}</p>
+    ${article.badge ? `<span class="inline-block text-xs font-semibold bg-green-100 text-green-700 rounded-full px-3 py-1">${article.badge}</span>` : ""}
+</div>
+`;
+                    break;
+                case "conference":
+                    conferencesCont.innerHTML += `
+<li class="pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <h4 class="font-bold text-gsuNavy">${article.title}</h4>
+            <p class="text-sm text-gray-600 italic mt-1">${article.journal} | ${article.date}</p>
+        </div>
+        ${article.award ? `<span class="shrink-0 inline-block text-xs font-bold bg-yellow-100 text-yellow-700 border border-yellow-300 rounded-full px-3 py-1"><i class="fa-solid fa-trophy mr-1"></i>${article.award}</span>` : ""}
+    </div>
+</li>
+`;
+                    break;
+                case "accepted":
+                    acceptedCont.innerHTML += `
+<li class="pb-6 border-b border-gray-100 last:border-0 last:pb-0">
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <h4 class="font-bold text-gsuNavy">${article.title}</h4>
+            <p class="text-sm text-gray-600 italic mb-1">${article.journal}</p>
+            ${article.description ? `<p class="text-sm text-gray-700">${article.description}</p>` : ""}
+        </div>
+        ${article.badge ? `<span class="shrink-0 inline-block text-xs font-semibold bg-blue-100 text-blue-700 rounded-full px-3 py-1">${article.badge}</span>` : ""}
+    </div>
+</li>
+`;
+                    break;
+                case "submitted":
+                    submittedCont.innerHTML += `
+<li class="pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <span class="font-semibold text-gray-800">${article.title}</span>
+            ${article.journal ? `<span class="text-xs text-gray-500 block italic mt-1">${article.journal}</span>` : ""}
+        </div>
+        ${article.badge ? `<span class="shrink-0 inline-block text-xs font-semibold bg-orange-100 text-orange-700 rounded-full px-3 py-1">${article.badge}</span>` : ""}
+    </div>
+</li>
+`;
+                    break;
+                case "astar":
+                    astarCont.innerHTML += `
+<li class="pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+    <div class="flex items-start justify-between gap-4">
+        <div>
+            <span class="font-semibold text-gray-800">${article.title}</span>
+            ${article.journal ? `<span class="text-xs text-gray-500 block italic mt-1">${article.journal}</span>` : ""}
+        </div>
+        <span class="shrink-0 inline-block text-xs font-bold bg-red-100 text-red-700 border border-red-200 rounded-full px-3 py-1">A*</span>
+    </div>
+</li>
+`;
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

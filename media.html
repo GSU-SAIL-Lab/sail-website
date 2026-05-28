@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatic Artificial Intelligence Laboratory (SAIL) | Georgia Southern University</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script src="components/load-nav-footer.js" type="module" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
+
+    <div class="w-screen min-h-screen">
+        <div id="nav-insert"></div>
+
+        <section id="media" class="pt-10 pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Student Posters</h2>
+                    <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded"></div>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Research posters and presentations from the Somatic Artificial Intelligence Laboratory, grouped by year.</p>
+                </div>
+
+                <div class="space-y-12" id="posters-cont">
+                    <!-- JavaScript inserts here -->
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-3xl hover:text-gsuGold transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button onclick="prevPoster()" class="absolute left-4 text-white text-3xl hover:text-gsuGold transition">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="nextPoster()" class="absolute right-16 text-white text-3xl hover:text-gsuGold transition">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Poster" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl">
+    </div>
+
+    <div id="footer-insert"></div>
+
+    <script>
+        const postersByYear = [
+            {
+                year: 2026,
+                posters: [
+                    "images/media/2026_1.jpeg",
+                    "images/media/2026_2.jpeg",
+                    "images/media/2026_3.jpg",
+                    // Add more 2026 posters here: "posters/2026_3.jpg",
+                ]
+            },
+            {
+                year: 2025,
+                posters: [
+                    "images/media/2025_1.jpg",
+                    "images/media/2025_2.jpeg",
+                    "images/media/2025_3.jpeg",
+                    "images/media/2025_4.jpeg",
+                    "images/media/2025_5.jpg",
+                    "images/media/2025_6.jpg",
+                    "images/media/2025_7.jpg",
+                    // Add more 2025 posters here: "posters/2025_4.jpg",
+                ]
+            },
+            {
+                year: 2024,
+                posters: [
+                    "images/media/2024_1.jpeg",
+                    "images/media/2024_2.jpg",
+                    "images/media/2024_3.jpeg",
+                    "images/media/2024_4.jpeg",
+                    "images/media/2024_5.jpeg",
+                    "images/media/2024_6.jpg",
+                    "images/media/2024_8.jpg",
+                    "images/media/2024_9.jpg",
+                    "images/media/2024_10.jpg",
+                    "images/media/2024_11.jpg",
+                    // Add more 2024 posters here: "posters/2024_4.jpg",
+                ]
+            },
+            {
+                year: 2023,
+                posters: [
+                    "images/media/2023_1.jpeg",
+                    "images/media/2023_2.jpg",
+                    "images/media/2023_3.jpg",
+                    // Add more 2023 posters here: "posters/2023_4.jpg",
+                ]
+            },
+            {
+                year: 2022,
+                posters: [
+                    "images/media/2022_1.jpg",
+                    // Add more 2022 posters here: "posters/2022_2.jpg",
+                ]
+            },
+            {
+                year: 2021,
+                posters: [
+                    "images/media/2021_1.jpeg",
+                    // Add more 2021 posters here: "posters/2021_2.jpg",
+                ]
+            },
+        ];
+
+        // Flat list of all posters for lightbox navigation
+        let allPosters = [];
+        let currentPosterIndex = 0;
+
+        postersByYear.forEach(group => {
+            group.posters.forEach(src => allPosters.push(src));
+        });
+
+        // Build the page
+        const postersCont = document.querySelector("#posters-cont");
+
+        postersByYear.forEach(group => {
+            let cards = "";
+            group.posters.forEach(src => {
+                const globalIndex = allPosters.indexOf(src);
+                cards += `
+<div class="cursor-pointer group relative overflow-hidden rounded-xl shadow-md border border-gray-200 bg-white hover:shadow-xl transition duration-300"
+     onclick="openLightbox(${globalIndex})">
+    <div class="w-full h-[280px] flex items-center justify-center bg-gray-100 overflow-hidden">
+        <img src="${src}" alt="Research Poster"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    </div>
+    <div class="absolute inset-0 bg-gsuNavy/70 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+        <i class="fa-solid fa-magnifying-glass-plus text-white text-4xl"></i>
+    </div>
+</div>
+`;
+            });
+
+            postersCont.innerHTML += `
+<div>
+    <div class="flex items-center gap-4 mb-6">
+        <h3 class="text-2xl font-bold text-gsuNavy">${group.year}</h3>
+        <div class="flex-1 h-px bg-gray-300"></div>
+        <span class="text-sm text-gray-500">${group.posters.length} poster${group.posters.length !== 1 ? "s" : ""}</span>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        ${cards}
+    </div>
+</div>
+`;
+        });
+
+        // Lightbox functions
+        function openLightbox(index) {
+            currentPosterIndex = index;
+            document.getElementById("lightbox-img").src = allPosters[index];
+            document.getElementById("lightbox").classList.remove("hidden");
+            document.getElementById("lightbox").classList.add("flex");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.add("hidden");
+            document.getElementById("lightbox").classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+
+        function prevPoster() {
+            currentPosterIndex = (currentPosterIndex - 1 + allPosters.length) % allPosters.length;
+            document.getElementById("lightbox-img").src = allPosters[currentPosterIndex];
+        }
+
+        function nextPoster() {
+            currentPosterIndex = (currentPosterIndex + 1) % allPosters.length;
+            document.getElementById("lightbox-img").src = allPosters[currentPosterIndex];
+        }
+
+        // Close lightbox on background click
+        document.getElementById("lightbox").addEventListener("click", function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", function(e) {
+            if (document.getElementById("lightbox").classList.contains("hidden")) return;
+            if (e.key === "Escape") closeLightbox();
+            if (e.key === "ArrowLeft") prevPoster();
+            if (e.key === "ArrowRight") nextPoster();
+        });
+    </script>
+
+</body>
+
+</html>

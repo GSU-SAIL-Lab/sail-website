@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatic Artificial Intelligence Laboratory (SAIL) | Georgia Southern University</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="global.css">
+
+    <script src="components/load-nav-footer.js" type="module" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-gsuGold selection:text-gsuNavy">
+
+    <div class="w-screen min-h-screen">
+        <div id="nav-insert"></div>
+        <section id="equipment" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gsuNavy uppercase tracking-wide">Technical Infrastructure</h2>
+                    <div class="h-1 w-20 bg-gsuGold mx-auto mt-4 rounded mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        The SAI utilizes state-of-the-art neurophysiological sensors, biometric imaging, and augmented reality hardware to capture high-dimensional data for our machine learning architectures.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="equipment-cont">
+                    <!-- There is JavaScript that puts code here. Do not remove this <div> -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-insert"></div>
+
+    <script>
+        const equipment = [
+            {
+                name: "EMOTIV 32-Channel EEG",
+                description: "High-density neurophysiological monitoring system used to capture complex temporal EEG signatures for multimodal emotion recognition and affective computing.",
+                imageUrl: "images/equipment/emotiv32.webp",
+            },
+            {
+                name: "Bio-Well GDV Camera",
+                description: "A Gas Discharge Visualization (GDV) device that captures electro-photonic emissions to provide objective, real-time data on physiological stress and somatic states.",
+                imageUrl: "images/equipment/bio-well.webp",
+            },
+            {
+                name: "Vuzix Smart Glasses",
+                description: "Augmented reality (AR) interfaces utilized for clinical deployment workflows and visual stimulus presentation in ocular and neurodevelopmental research.",
+                imageUrl: "images/equipment/vuzix.webp",
+            },
+            {
+                name: "Bio-Well Glove",
+                description: "A specialized conductive glove allowing for the continuous, real-time measurement of a subject's dynamic stress levels and energy states during extended cognitive tasks.",
+                imageUrl: "images/equipment/the-glove.webp",
+            },
+            {
+                name: "Bio-Well BioCor",
+                description: "An Extremely High Frequency (EHF) bioresonance device that uses finger scan data to generate customized auditory frequency therapies for stress reduction.",
+                imageUrl: "images/equipment/bio-cor.webp",
+            },
+            {
+                name: "Sputnik Environmental Sensor",
+                description: "An environmental antenna connected to the Bio-Well system to measure the baseline electro-photonic energy and stress levels of the physical clinical space.",
+                imageUrl: "images/equipment/sputnik.webp",
+            },
+            {
+                name: "Bio-Well Water Sensor",
+                description: "A laboratory-grade ORP sensor used to measure the electro-photonic responses of liquids and biological samples to various environmental stimuli.",
+                imageUrl: "images/equipment/water-sensor.webp",
+            },
+            {
+                name: "Wearable Sensing DSI-7",
+                description: "A wireless dry-electrode EEG headset offering research-grade signal quality with a setup time under one minute. Features 7 customizable sensor locations across frontal, central, and posterior brain regions, plus 2 ear-clip sensors and a 4-bit trigger input for synchronization with eye-tracking, IMU, and other modalities. Its patented sensor technology provides near-immunity to motion and electrical artifacts, enabling real-world and AR/VR experimental deployments.",
+                imageUrl: "images/equipment/dsi7.webp",
+            },
+            {
+                name: "Neurosity Crown EEG Headset",
+                description: "An integrated 8-channel brain-computer interface with sensors covering all four lobes of the brain at a 256 Hz sample rate. Powered by an onboard N3 quad-core processor with 1 GB RAM and 8 GB storage, the Crown processes raw EEG data locally for privacy and streams focus, calm, and kinesis metrics over Wi-Fi or Bluetooth. Used at SAIL for cognitive state monitoring, focus quantification, and BCI application development.",
+                imageUrl: "images/equipment/crown.webp",
+            },
+            {
+                name: "Tobii Eye Tracker 5",
+                description: "A precision eye and head tracking device built around a custom optical biometric sensor with a 133 Hz sampling rate and a broad 40×40 degree field of view. Capable of tracking gaze on screens up to 30 inches with minimal latency, it is used at SAIL for ocular research, visual attention studies, and multimodal fusion with concurrent EEG recordings.",
+                imageUrl: "images/equipment/tobii5.webp",
+            },
+            {
+                name: "NeuroSky MindWave Starter Kit",
+                description: "A single-channel EEG headset positioned at FP1 that wirelessly outputs raw brainwave data, EEG power spectra (alpha, beta, theta, delta, gamma), and eSense attention and meditation scores via Bluetooth. Operating for up to 8 hours on a single AAA battery, it serves as an accessible entry point for brain-computer interface prototyping, educational demonstrations, and attention-based classification experiments.",
+                imageUrl: "images/equipment/mindwave.webp",
+            },
+            {
+                name: "MindWave Force Trainer Kit",
+                description: "A NeuroSky-powered EEG headset kit that translates real-time concentration levels into tangible physical feedback, originally designed to gamify attention training. Used at SAIL as an engaging neurofeedback demonstration tool, it provides a hands-on platform for studying the relationship between sustained mental focus and measurable brainwave output in informal and outreach settings.",
+                imageUrl: "images/equipment/forcetrainer.webp",
+            },
+            {
+                name: "Muse 2",
+                description: "A research-grade multi-sensor EEG headband with 7 sensors capturing brainwave activity, heart rate, breathing, and movement simultaneously. Used by neuroscience researchers worldwide, it delivers real-time biofeedback through the Muse app and exposes raw EEG data via an open API. At SAIL it supports affective computing studies, mindfulness-based stress research, and multimodal physiological data collection.",
+                imageUrl: "images/equipment/muse2.webp",
+            },
+            {
+                name: "BrainTap Headset",
+                description: "An audio-visual brainwave entrainment device that combines binaural beats, isochronic tones, and pulsed blue LED light delivered through a visor and earphones. Driven by proprietary Neuro-Sensory Algorithms across a library of guided sessions, it guides users through targeted brainwave states to promote relaxation, focus, and neuroplasticity. At SAIL it is used to study the psychophysiological effects of multi-sensory entrainment on stress and cognitive performance.",
+                imageUrl: "images/equipment/braintap.webp",
+            },
+        ]
+
+        const equipmentCont = document.querySelector("#equipment-cont");
+        for (const eq of equipment) {
+            equipmentCont.innerHTML += `
+<div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition duration-300 group">
+    <div class="h-48 bg-white flex items-center justify-center p-4 border-b border-gray-100 overflow-hidden">
+        <img src="${eq.imageUrl}" alt="${eq.name}" class="max-h-full object-contain group-hover:scale-105 transition duration-500">
+    </div>
+    <div class="p-6 border-t-4 border-gsuNavy">
+        <h3 class="text-xl font-bold text-gsuNavy mb-2">${eq.name}</h3>
+        <p class="text-sm text-gray-600">${eq.description}</p>
+    </div>
+</div>
+`;
+        }
+    </script>
+
+</body>
+
+</html>
